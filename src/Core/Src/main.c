@@ -22,6 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "TM1640.h"
 
 /* USER CODE END Includes */
 
@@ -43,6 +44,20 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+
+tm1640_hw_dat tm1640_m1 = {
+	.DIN_GPIOx = GPIOA,
+	.CLK_GPIOx = GPIOA,
+	.DIN_PIN = LL_GPIO_PIN_3,
+	.CLK_PIN = LL_GPIO_PIN_2,
+};
+
+tm1640_hw_dat tm1640_m2 = {
+	.DIN_GPIOx = GPIOA,
+	.CLK_GPIOx = GPIOA,
+	.DIN_PIN = LL_GPIO_PIN_1,
+	.CLK_PIN = LL_GPIO_PIN_0,
+};
 
 /* USER CODE END PV */
 
@@ -90,7 +105,8 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-
+  TM1640_display_byte(&tm1640_m1, 1, 0xFF);
+  TM1640_display_byte(&tm1640_m2, 1, 0xFF);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -98,7 +114,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+      
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

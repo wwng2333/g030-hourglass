@@ -1,0 +1,16 @@
+--cpu Cortex-M0+
+"g030-hourglass\startup_stm32g030xx.o"
+"g030-hourglass\main.o"
+"g030-hourglass\gpio.o"
+"g030-hourglass\stm32g0xx_it.o"
+"g030-hourglass\tm1640.o"
+"g030-hourglass\stm32g0xx_ll_utils.o"
+"g030-hourglass\stm32g0xx_ll_exti.o"
+"g030-hourglass\stm32g0xx_ll_gpio.o"
+"g030-hourglass\stm32g0xx_ll_pwr.o"
+"g030-hourglass\stm32g0xx_ll_rcc.o"
+"g030-hourglass\system_stm32g0xx.o"
+--strict --scatter "g030-hourglass\g030-hourglass.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "g030-hourglass.map" -o g030-hourglass\g030-hourglass.axf
